@@ -1,0 +1,44 @@
+ body {
+
+     background-image: url(1x/Asset%202.png);
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     height: 100vh;
+
+ }
+
+ #text {
+     font-family: "Arial Black", Gadget, sans-serif;
+     font-size: 5vw;
+     margin: auto;
+     display: block;
+     width: 50%;
+     color: aliceblue;
+     text-align: center;
+     padding-top: 200px;
+ }
+
+ .painike {
+    position: absolute;
+     top: 50%;
+     left: 45%;
+     padding-top: 250px;
+     
+
+
+ }
+
+ button {
+     padding: 18px;
+     text-align: center;
+     text-decoration: none;
+     font-size: 16px;
+     font-weight: 600;
+     border-radius: 20px;
+     border-style: none;
+     color: #ffffff;
+     background-color: #3a5fff;
+
+
+ }
