@@ -109,11 +109,31 @@
 
             //var jsonData = {"responseOptions" : vastaus ,"questionText" : {"id" : tunnukset[i]}
             //
-
-            var myJSON = JSON.stringify(vastaukset);
+            var vastaus2 = [{
+                "answers": [{
+                    "questionId": 1,
+                    "answer": "2"
+                }, {
+                    "questionId": 2,
+                    "answer": "Tietojenkäsittelyn koulutus"
+                }, {
+                    "questionId": 3,
+                    "answer": "iha hyvi"
+                }, {
+                    "questionId": 4,
+                    "answer": "Sivusto toimii kohtalaisesti"
+                }, {
+                    "questionId": 5,
+                    "answer": "2"
+                }, {
+                    "questionId": 6,
+                    "answer": "Muokkaus"
+                }]
+            }]
+            var myJSON = JSON.stringify(vastaus2);
             alert(myJSON);
             $.ajax({
-                url: "https://moodleinquiry.herokuapp.com/open/add/answer",
+                url: "https://moodleinquiry.herokuapp.com/open/answers",
                 type: 'POST',
                 dataType: 'application/json',
                 contentType: 'application/json',
