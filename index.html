@@ -8,7 +8,7 @@
     <title>Digiprojekti</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="./digiproj4.1_files/digiproj.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="tyyli.css" media="screen">
 </head>
 
 <body>
@@ -16,11 +16,13 @@
     <div class="login-wrap">
         <div class="login-html">
 
-
             <form id="jebe">
-                <div id="pepe">HHMoodle Kysely<br><br></div><br>
+                <div id="pepe">
+                    <h1>HH Moodle Kysely</h1><br>
+                    <p>Tämän kyselyn tavoitteena on kartoittaa Moodle -palvelun käyttäjäkokemuksia. Kyselyllä pyritään selvittämään Haaga-Helian opiskelijoiden käyttäytymistä palvelussa. Haluamme myös selvittää sivun toimivuutta, sekä käyttäjien mielipiteitä verkkosivun ulkoasusta. Kysely tehdään Haaga-Helian Digiprojektikurssia varten.</p>
+                </div><br>
 
-                <button onclick="laheta()" id="vastaus" name="submit" type="submit">Lähetä</button>
+                <button><a href="kiitos.html" onclick="laheta()" id="vastaus" name="submit" type="submit">Lähetä</a></button>
 
             </form>
 
@@ -32,6 +34,8 @@
     <script type="text/javascript" async="" src="./digiproj4.1_files/analytics.js.lataus"></script> -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
+
+    <div id="lomake"></div>
     <script>
         var tunnukset = [];
         var items = [];
@@ -98,10 +102,9 @@
 
 
                 vastaukset.push({
-                    "answers": [{
-                        "questionId": tunnukset[i],
-                        "answer": vastaus
-                    }]
+                    "questionId": tunnukset[i],
+                    "answer": vastaus
+
                 });
 
             }
@@ -110,8 +113,10 @@
             //var jsonData = {"responseOptions" : vastaus ,"questionText" : {"id" : tunnukset[i]}
             //
 
-            var myJSON = JSON.stringify(vastaukset);
-            alert(myJSON);
+            var myJSON = JSON.stringify({
+                'answers': vastaukset
+            });
+            console.log(myJSON);
             $.ajax({
                 url: "https://moodleinquiry.herokuapp.com/open/add/answer",
                 type: 'POST',
@@ -126,9 +131,11 @@
                     console.log(status);
                     console.log(error);
                 },
+                async: false
 
             });
         }
+
     </script>
 
 </body>

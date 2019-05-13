@@ -1,6 +1,6 @@
  body {
 
-     background-image: url(1x/Asset%202.png);
+     background-image: url(piirakkataustakuva.png);
      background-position: center;
      background-repeat: no-repeat;
      background-size: cover;
@@ -20,11 +20,11 @@
  }
 
  .painike {
-    position: absolute;
+     position: absolute;
      top: 50%;
      left: 45%;
      padding-top: 250px;
-     
+
 
 
  }
@@ -41,4 +41,9 @@
      background-color: #3a5fff;
 
 
+ }
+
+ a {
+     text-decoration: none;
+     color: white;
  }

@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="pie.css" media="screen" />
+    <title>HH Moodle kysely</title>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+        // Callback 1
+        google.charts.setOnLoadCallback(quest1);
+        // Callback 2
+        google.charts.setOnLoadCallback(quest2);
+        // Callback 3
+        google.charts.setOnLoadCallback(quest3);
+        // Callback 4
+        google.charts.setOnLoadCallback(quest4);
+        // Callback 5
+        google.charts.setOnLoadCallback(quest5);
+        // Callback 6
+        google.charts.setOnLoadCallback(quest6);
+        // Data table for quest: 1
+        function quest1() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');
+            data.addColumn('number', 'Slices');
+            data.addRows([
+                ['Ensinmäisen', 3],
+                ['Toisen', 6],
+                ['Kolmannen', 2],
+                ['Neljännen', 2],
+                ['Muu', 1]
+            ]);
+            var options = {
+                title: 'Minkä vuoden opiskelija',
+                width: 500,
+                height: 300,
+                colors: ['#748CBC', '#87A2D9', '#94B2EE', '#CCD8EE', '#eaf1ff']
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('quest1_chart_div'));
+            chart.draw(data, options);
+        }
+        // Data table for quest: 2
+        function quest2() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');
+            data.addColumn('number', 'Slices');
+            data.addRows([
+                ['Finanssi- ja talousasiantuntija', 2],
+                ['Hotelli- ja ravintola-ala', 2],
+                ['Johdon assistentti ja kielet', 0],
+                ['Journalismi', 2],
+                ['Liiketalous', 1],
+                ['Liikunta ja vapaa-aika', 3],
+                ['Matkailun', 0],
+                ['Matkailun liikejohto', 4],
+                ['Myynti ja visuaalinen markkinointi', 3],
+                ['Tietojenkäsittely', 9],
+                ['Myyntityö', 1],
+                ['Englanninkieliset amk-tutkinnot', 0]
+            ]);
+            var options = {
+                title: 'Koulutusalat',
+                width: 500,
+                height: 300,
+                colors: ['#748CBC', '#87A2D9', '#94B2EE', '#CCD8EE', '#eaf1ff']
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('quest2_chart_div'));
+            chart.draw(data, options);
+        }
+        // Data table for quest: 3
+        function quest3() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');
+            data.addColumn('number', 'Slices');
+            data.addRows([
+                ['Sivusto toimii tarkoituksessaan loistavasti', 1],
+                ['Sivusto toimii hyvin', 15],
+                ['Sivusto toimii kohtalaisesti', 5],
+                ['Sivustossa on usein ongelmia', 8],
+                ['Sivusto ei toimi laisinkaan', 3]
+            ]);
+            var options = {
+                title: 'Mitkä väittämistä kuvaa moodlea parhaiten',
+                width: 500,
+                height: 300
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('quest3_chart_div'));
+            chart.draw(data, options);
+        }
+        // Data table for quest: 4
+        function quest4() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Topping');
+            data.addColumn('number', 'Slices');
+            data.addRows([
+                ['Todella ruma', 3],
+                ['Parannettavan varaa', 5],
+                ['Neutraali', 8],
+                ['Hieno', 12],
+                ['Aivan fantastisen hieno', 4]
+            ]);
+            var options = {
+                title: 'Mielipiteet sivuston ulkoasusta',
+                width: 500,
+                height: 300
+            };
+            var chart = new google.visualization.PieChart(document.getElementById('quest4_chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Kyselyn tuloksia</h1>
+    <table class="columns">
+        <tr>
+            <td>
+                <div id="quest1_chart_div" style="border: 1px solid #ccc"></div>
+            </td>
+            <td>
+                <div id="quest2_chart_div" style="border: 1px solid #ccc"></div>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <table class="columns">
+        <tr>
+            <td>
+                <div id="quest3_chart_div" style="border: 1px solid #ccc"></div>
+            </td>
+            <td>
+                <div id="quest4_chart_div" style="border: 1px solid #ccc"></div>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <div class="nappula">
+        <button><a href="kiitos.html">Takaisin</a></button>
+    </div>
+</body>
+
+</html>
